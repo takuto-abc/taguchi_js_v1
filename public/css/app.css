@@ -53,6 +53,11 @@
     text-align: center;
   }
   
+input::placeholder {
+  color: #cccccc; /* ここで色を指定します。#ccccccは薄いグレーです。 */
+  opacity: 1; /* モダンブラウザでの互換性のため */
+}
+
   /* メニューボタンのスタイル */
   #menu-button {
     display: none; /* デフォルトで非表示 */

@@ -2,11 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("loginForm");
     const usernameInput = document.getElementById("username");
     const mailAddressInput = document.getElementById("mailAddress");
-    const passwordInput = document.getElementById("password");
     
     const usernameError = document.getElementById("usernameError");
     const mailAddressError = document.getElementById("mailAddressError");
-    // const passwordError = document.getElementById("passwordError");
     const successMessage = document.getElementById("successMessage");
 
     form.addEventListener("submit", (e) => {
@@ -34,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function validate(values) {
         const errors = {};
-        const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
+        const regex = /^[a-zA-Z0-9_.+-]+@st\.omu\.ac\.jp$/; // @st.omu.ac.jp ドメインに限定
 
         if (!values.username) {
             errors.username = "ユーザー名を入力してください。";
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!values.mailAddress) {
             errors.mailAddress = "メールアドレスを入力してください。";
         } else if (!regex.test(values.mailAddress)) {
-            errors.mailAddress = "正しいメールアドレスを入力してください";
+            errors.mailAddress = "@st.omu.ac.jp のメールアドレスを入力してください";
         }
 
         return errors;
