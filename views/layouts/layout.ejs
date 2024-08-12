@@ -8,18 +8,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <!-- 静的ファイルの読み込み -->
     <link rel="stylesheet" href="/css/app.css"> <!-- EJSでは静的ファイルをこのように参照 -->
+    <link rel="stylesheet" href="/css/creative.css"> 
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/creative.css" type="text/css">
+    
 </head>
 
-<body>
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                        <a>MENU ≡</a>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">Takeda Seminar</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="aboutus.html">AboutUs</a>
+                    </li>
+                    <li>
+                        <a href="prof.html">Prof.Takeda</a>
+                    </li>
+                    <li>
+                        <a href="shinjosho.html">Entry Sheet</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="shinjosho.html#exam-schedule">Exam Schedule</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#twitter"><img height="15" width="15" src="icon_sns/twitter.svg" alt="twitter"> Twitter</a>
+                    </li>
+                    <li>
+                        <a href="https://onedrive.live.com/redir.aspx?cid=de088d657a806648&resid=DE088D657A806648!2804&parId=DE088D657A806648!103&authkey=!AC6uDtWKIJG6Ilg"target="_blank">Contents</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
     <header>
-        <div class="container d-flex justify-content-between align-items-center">
-        <% if (req.url !== '/') { %> <!-- 現在のURLが '/' でない場合 -->
-            <a href="/">
-                <img src="/images/logo.png" alt="トップページへ戻る" id="home-icon" class="img-fluid" style="width: 50px;">
-            </a>
-        <% } %>
-            <img src="/images/Preview.png" class="img-fluid" style="max-height: 40px;">
-            <a href="/auth/login" class="btn btn-warning">ログイン</a>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1>田口ゼミ紹介ページです！</h1>
+                <hr>
+				<p>ここは明治大学政治経済学部経済学科の武田ゼミナールのホームページです。<br>「グローバル化が進むなかで、日本経済をいかに元気にするか」を研究しています。<br> ディベートによって金融・財政・通商などの諸問題を学んでいます。<BR> <font color="#E0FF00"><!--※只今、ホームページの改変作業中です。<br>ご迷惑おかけ致しまして申し訳ございません。--></font></p>
+				<p><a href="shinjosho.html" class="btn btn-primary btn-xl page-scroll" align="center"> 2024年度の身上書を配信中です。
+				 <!--一次試験身上書の受付を終了いたしました。--><!-- 二次試験身上書の受付を開始いたしました。-->
+<!--2022年度のゼミ生募集は終了いたしました。-->
+<br>皆さんのご応募、お待ちしております！
+<!--二次試験募集までもう少々お待ちください。-->
+<!--たくさんのご応募ありがとうございました！--></a></p>
+            </div>
         </div>
     </header>
 
