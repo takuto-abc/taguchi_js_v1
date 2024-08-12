@@ -4218,23 +4218,30 @@ html {
     }
 }
 
-.navbar-nav {
-  display: flex;
-  justify-content: flex-start; /* 必要に応じて左右揃えの調整も可能 */
-  margin: 7.5px -15px;
+#nav-menu {
+  display: flex; /* Flexboxを使用して横並びにする */
+  justify-content: flex-end; /* 必要に応じて右寄せ、左寄せ、中央寄せを調整 */
+  list-style: none; /* リストスタイルを無効にする */
+  padding-left: 0; /* 左側の余白を削除 */
+  margin: 0; /* マージンをリセット */
 }
 
-.navbar-nav > li {
-  vertical-align: top;
-  width: auto;
+#nav-menu > li {
+  margin: 0 10px; /* 各メニュー項目の間に余白を追加 */
 }
 
+#nav-menu > li > a {
+  display: block; /* リンクをブロック要素にする */
+  padding: 10px 15px; /* パディングを追加してリンクのクリック範囲を拡大 */
+  text-decoration: none; /* リンクの下線を削除 */
+  color: #333; /* リンクの文字色を設定 */
+}
 
-.navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 20px;
-    display: inline-block;
+#nav-menu > li > a:hover,
+#nav-menu > li > a:focus {
+  color: #000; /* ホバー時のリンク色を設定 */
+  background-color: #f8f8f8; /* ホバー時の背景色を設定 */
+  border-radius: 4px; /* 角を丸くする */
 }
 
 @media (max-width: 767px) {
