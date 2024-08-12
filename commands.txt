@@ -1,0 +1,128 @@
+node app.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+composer create-project --prefer-dist laravel/laravel zemi_v2
+
+cd zemi_v2
+php artisan serve
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=zemi_v2_db
+DB_USERNAME=root
+DB_PASSWORD=Uq9QtWgH
+
+php artisan make:model Post -m
+
+ Commands end with ; or \g.
+
+ CREATE DATABASE zemi_v2;
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Uq9QtWgH';
+FLUSH PRIVILEGES;
+
+mysql -u root -p
+exit;
+
+GRANT ALL PRIVILEGES ON zemi_v2_db.* TO 'root'@'localhost' IDENTIFIED BY 'Uq9QtWgH';
+FLUSH PRIVILEGES;
+
+php artisan make:model Students -m
+
+php artisan make:model Students -m
+php artisan migrate
+
+php artisan make:controller PageController
+
+php artisan serve
+
+-PageControllerの確認
+-ルーティングの確認
+-ビューの確認
+-レイアウトの確認
+-画像ファイルの配置
+
+・John Doeを消す（DB操作）
+・スマホ版のときボタンを小さくする（CSS）
+
+DB::table('student')->get();
+
+git remote add origin https://github.com/takuto-abc/zemi_v3.git
+
+fathomless-lowlands-88825
+
+エラーなしversion
+heroku releases --app fathomless-lowlands-88825
+heroku releases:rollback v88 --app fathomless-lowlands-88825
+v88
+v114
+v134 7/18
+
+heroku config:set APP_KEY=base64:WPSGQckl3XYdI5FOTRt3chiEOZuVDd0oXMYB5iiEQB4= --app fathomless-lowlands-88825
+
+git3セット
+git add .
+git commit -m "ok"
+git push heroku main
+
+DB更新
+heroku run php artisan tinker --app fathomless-lowlands-88825
+DB::table('students')->where('name', 'John Doe')->delete();
+
+表示されないとき
+npm run production
+touch webpack.mix.js
+npm run dev  # 開発環境向けのビルド
+npm run production  # 本番環境向けのビルド
+
+
+nano ~/.zshrc
+export PATH="./node_modules/.bin:$PATH"
+source ~/.zshrc 
+
+rm -rf node_modules
+npm install
+
+npm install
+npm install bootstrap jquery @popperjs/core --save
+npm install sass sass-loader resolve-url-loader --save-dev
+
+npm run dev
+npm run production 
+
+npm install --save-dev babel-loader @babel/core @babel/preset-env
+npm install laravel-mix@latest --save-dev
+
+npm install --save-dev vite laravel-vite-plugin
+
+
+<!-- <script src="{{ mix('/resources/js/menu.js') }}"></script> -->
