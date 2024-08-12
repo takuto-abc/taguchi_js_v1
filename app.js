@@ -24,17 +24,32 @@ app.use(session({
 
 // ログイン処理
 app.post('/auth/login', async (req, res) => {
-  const { username, password } = req.body;
-  const user = users.find(u => u.username === username);
+  const { username, mailAddress } = req.body;
+  
+  // usernameとmailAddressが一致するユーザーを検索
+  const user = users.find(u => u.username === username && u.mailAddress === mailAddress);
+
   if (user) {
+      // パスワード認証が不要の場合はこの部分をコメントアウトまたは削除
+      /*
       const match = await bcrypt.compare(password, user.password);
       if (match) {
           req.session.userId = user.id;
+          req.session.loginSuccess = true; // ログイン成功フラグをセッションに設定
           return res.redirect('/');
       }
+      */
+
+      // ユーザーが見つかったらログイン成功と見なす
+      req.session.userId = user.id;
+      req.session.loginSuccess = true; // ログイン成功フラグをセッションに設定
+      return res.redirect('/');
   }
-  res.render('auth/login', { error: 'Invalid username or password' });  // 修正
+
+  // 認証に失敗した場合の処理
+  res.render('auth/login', { error: 'Invalid username or email' });
 });
+
 
 app.get('/auth/signup', (req, res) => {
   res.render('auth/signup');  // 修正
@@ -115,9 +130,11 @@ const schedule = [
   { event: '12月', activity: '冬の活動' }
 ];
 
-// ルート設定
+// ログイン成功時のメッセージ表示
 app.get('/', (req, res) => {
-  res.render('index', { title: 'トップページ', req });  // `req` は不要
+  const loginSuccess = req.session.loginSuccess;
+  req.session.loginSuccess = false; // フラグをクリア
+  res.render('index', { title: 'トップページ', loginSuccess });
 });
 
 app.get('/index', (req, res) => {

@@ -21,10 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
         usernameError.textContent = formErrors.username || "";
         mailAddressError.textContent = formErrors.mailAddress || "";
 
-        // エラーがなければ成功メッセージを表示
+        // エラーがなければ成功メッセージを表示し、トップページにリダイレクト
         if (Object.keys(formErrors).length === 0) {
-            successMessage.style.display = "block";
             console.log(formValues);
+
+            // セッションストレージにログイン成功フラグを保存
+            sessionStorage.setItem('loginSuccess', 'true');
+
+            // トップページにリダイレクト
+            window.location.href = "/";
         } else {
             successMessage.style.display = "none";
         }
