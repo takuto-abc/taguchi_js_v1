@@ -1,0 +1,237 @@
+/* 変数をCSSカスタムプロパティに変換 */
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --header-bg-color: #f8f8f8;
+    --header-text-color: black;
+    --menu-bg-color: #4c72af;
+    --instagram-icon-width: 40px;
+  }
+  
+  /* グローバルスタイル */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  /* ヘッダーの基本スタイル */
+  header {
+    background-color: var(--header-bg-color);
+    color: var(--header-text-color);
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    position: relative;
+    height: 150px; /* ヘッダーの高さを増やす */
+  }
+  
+  .header-logo {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%); /* 中央に配置 */
+    height: 100px; /* ロゴの高さを増やす */
+    width: auto;
+  }
+  
+  /* タイトルを中央に配置 */
+  .header-content h1 {
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* メニューボタンのスタイル */
+  #menu-button {
+    display: none; /* デフォルトで非表示 */
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  
+  /* ナビゲーションメニューのスタイル */
+  #nav-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* 横並び */
+  }
+  
+  #nav-menu .nav-item {
+    display: block;
+    text-align: center;
+    margin: 0 0.5rem; /* リンク間のスペースを狭める */
+  }
+  
+  #nav-menu .nav-item a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  
+  /* メニューのデフォルトの非表示スタイル */
+  #nav-menu {
+    display: none;
+  }
+  
+  /* メニューがアクティブなときの表示スタイル */
+  #nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    background-color: var(--menu-bg-color);
+    z-index: 20;
+  }
+  
+  #nav-menu .nav-item {
+    border-bottom: 1px solid white;
+  }
+  
+  #nav-menu .nav-item a {
+    padding: 15px;
+    color: white;
+    text-align: left;
+  }
+  
+  /* レスポンシブデザイン */
+  @media (max-width: 767px) {
+    .header-content {
+      flex-direction: column;
+      height: auto; /* 高さを自動調整 */
+      padding: 15px;
+    }
+  
+    .header-logo {
+      height: 60px; /* ロゴの高さを縮小 */
+    }
+  
+    .header-content h1 {
+      margin-top: 1rem; /* ロゴとタイトルの間にスペースを追加 */
+    }
+  
+    #menu-button {
+      display: block; /* 画面幅が767px以下の時に表示 */
+    }
+  
+    #nav-menu {
+      display: none; /* 画面幅が767px以下の時に非表示 */
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0; /* 右端に固定 */
+      width: 200px; /* 幅を適切に設定 */
+      background-color: var(--menu-bg-color);
+      z-index: 20; /* 他のコンテンツの上に表示 */
+    }
+  
+    #nav-menu.active {
+      display: flex;
+    }
+  
+    #nav-menu .nav-item {
+      margin: 0; /* リンク間のスペースを除去 */
+      border-bottom: 1px solid white; /* 各リンク間にボーダーを追加 */
+    }
+  
+    #nav-menu .nav-item a {
+      padding: 15px; /* 各リンクのパディングを調整 */
+      color: white;
+      text-align: left; /* テキストを左揃え */
+    }
+  
+    .btn-primary {
+      border-color: var(--menu-bg-color);
+    }
+  
+    .btn-primary:hover {
+      border-color: var(--menu-bg-color);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .header-content {
+      flex-direction: row;
+    }
+  
+    .header-logo {
+      height: 100px; /* 通常のロゴの高さ */
+    }
+  
+    #menu-button {
+      display: none; /* 画面幅が768px以上の時に非表示 */
+    }
+  
+    #nav-menu {
+      display: flex; /* 画面幅が768px以上の時に表示 */
+      justify-content: center;
+      flex-direction: row; /* メニューを横に並べる */
+    }
+  
+    #nav-menu .nav-item {
+      margin: 0 0.5rem; /* リンク間のスペースを狭める */
+    }
+  
+    /* ボタンのスタイル */
+    .nav-item .btn {
+      display: inline-block; /* 画面幅が768px以上の時に表示 */
+    }
+  }
+  
+  #home-icon {
+    width: 50px;
+  }
+  
+  #instagram-icon {
+    width: var(--instagram-icon-width);
+  }
+  
+  /* ボタンのカスタムスタイル */
+  .btn-primary {
+    border-color: var(--primary-color);
+  }
+  
+  .btn-primary:hover {
+    border-color: var(--primary-hover-color);
+  }
+  
+  /* ボタンのサイズ調整 */
+  .btn-lg {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+  
+  .carousel-item {
+    height: 400px;
+  }
+  
+  .carousel-item img {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 全体の調整 */
+  footer {
+    background-color: var(--header-bg-color);
+    padding: 10px 0;
+  }
+  
