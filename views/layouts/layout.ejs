@@ -6,9 +6,17 @@
     <title><%= title %></title> <!-- 閉じタグを修正 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (必要なら追加) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <!-- 静的ファイルの読み込み -->
     <link rel="stylesheet" href="/css/app.css"> <!-- EJSでは静的ファイルをこのように参照 -->
     <link rel="stylesheet" href="/css/creative.css"> 
+    <link rel="stylesheet" href="/css/animate.min.css"> 
     <link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
     <!-- Custom Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -30,11 +38,11 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
-                        <a>MENU ≡</a>
+                    <span>MENU ≡</span>
                 </button>
                 <a class="navbar-brand page-scroll" href="index.html">Takeda Seminar</a>
             </div>
-
+    
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
@@ -54,23 +62,22 @@
                         <a class="page-scroll" href="index.html#twitter"><img height="15" width="15" src="icon_sns/twitter.svg" alt="twitter"> Twitter</a>
                     </li>
                     <li>
-                        <a href="https://onedrive.live.com/redir.aspx?cid=de088d657a806648&resid=DE088D657A806648!2804&parId=DE088D657A806648!103&authkey=!AC6uDtWKIJG6Ilg"target="_blank">Contents</a>
+                        <a href="https://onedrive.live.com/redir.aspx?cid=de088d657a806648&resid=DE088D657A806648!2804&parId=DE088D657A806648!103&authkey=!AC6uDtWKIJG6Ilg" target="_blank">Contents</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="index.html#contact">Contact</a>
                     </li>
-                </ul>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
     </nav>
-
+    
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>田口ゼミ紹介ページです！</h1>
+                <h1>田口ゼミ紹介サイトです！</h1>
                 <hr>
 				<p>ここは明治大学政治経済学部経済学科の武田ゼミナールのホームページです。<br>「グローバル化が進むなかで、日本経済をいかに元気にするか」を研究しています。<br> ディベートによって金融・財政・通商などの諸問題を学んでいます。<BR> <font color="#E0FF00"><!--※只今、ホームページの改変作業中です。<br>ご迷惑おかけ致しまして申し訳ございません。--></font></p>
 				<p><a href="shinjosho.html" class="btn btn-primary btn-xl page-scroll" align="center"> 2024年度の身上書を配信中です。
@@ -82,6 +89,19 @@
             </div>
         </div>
     </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Concept</h2>
+                    <hr class="light">
+                    <p class="text-faded" >明治大学政治経済学部の経済学科のゼミです。</br>日本経済を元気にするにはどうしたらよいのか。</br>それをプレゼン・ディベート・ディスカッションなどを通して学んでいきます。</br>発表の機会が多いので、アウトプットする力が鍛えられます。</br><a href="../hp2014/index.html" style="color: #ffffff;">旧ホームページはこちら。</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
 
     <main class="container my-5">
         <%- body %> <!-- ページ固有のコンテンツがここに挿入される -->
