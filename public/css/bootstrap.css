@@ -4220,7 +4220,7 @@ html {
 #nav-menu {
   display: flex; /* Flexboxを使用して横並びにする */
   justify-content: flex-end; /* 必要に応じて右寄せ、左寄せ、中央寄せを調整 */
-  list-style: none; /* リストスタイルを無効にする */
+  /* list-style: none; リストスタイルを無効にする */
   padding-left: 0;
   margin: 0;
   list-style: none; /* リストスタイルを削除
@@ -4232,7 +4232,7 @@ html {
 }
 
 #nav-menu > li > a {
-  background-color: #333; /* 背景色をダークグレーに設定 */
+  background-color: transparent; /* 背景色をダークグレーに設定 */
   color: white; /* 文字色を白に設定 */
   /* padding: 10px 15px; パディングを調整 */
   text-decoration: none; /* リンクの下線を削除 */
@@ -4249,7 +4249,8 @@ html {
         float: none;
         width: auto;
         margin-top: 0;
-        background-color: transparent;
+        background-color: transparent!important;
+        color: black; /* 文字色を白に設定 */
         border: 0;
         -webkit-box-shadow: none;
         box-shadow: none;
@@ -4263,7 +4264,9 @@ html {
     }
     .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-nav .open .dropdown-menu > li > a:focus {
-        background-image: none;
+      background-color: rgba(255, 255, 255, 0.1) !important; /* ホバー時も透明に設定 */
+      color: white; /* 文字色を白に設定 */
+      background-image: none;
     }
 }
 
