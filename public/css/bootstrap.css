@@ -4195,7 +4195,6 @@ html {
     margin-top: 8px;
     margin-right: 15px;
     margin-bottom: 8px;
-    background-color: transparent;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
@@ -4222,8 +4221,10 @@ html {
   display: flex; /* Flexboxを使用して横並びにする */
   justify-content: flex-end; /* 必要に応じて右寄せ、左寄せ、中央寄せを調整 */
   list-style: none; /* リストスタイルを無効にする */
-  padding-left: 0; /* 左側の余白を削除 */
-  margin: 0; /* マージンをリセット */
+  padding-left: 0;
+  margin: 0;
+  list-style: none; /* リストスタイルを削除
+
 }
 
 #nav-menu > li {
@@ -4231,17 +4232,15 @@ html {
 }
 
 #nav-menu > li > a {
-  display: block; /* リンクをブロック要素にする */
-  padding: 10px 15px; /* パディングを追加してリンクのクリック範囲を拡大 */
+  background-color: #333; /* 背景色をダークグレーに設定 */
+  color: white; /* 文字色を白に設定 */
+  /* padding: 10px 15px; パディングを調整 */
   text-decoration: none; /* リンクの下線を削除 */
-  color: #333; /* リンクの文字色を設定 */
 }
 
-#nav-menu > li > a:hover,
-#nav-menu > li > a:focus {
-  color: #000; /* ホバー時のリンク色を設定 */
-  background-color: #f8f8f8; /* ホバー時の背景色を設定 */
-  border-radius: 4px; /* 角を丸くする */
+#nav-menu > li > a:hover {
+  background-color: #555; /* ホバー時の背景色を変更 */
+  color: #fff; /* ホバー時の文字色を変更 */
 }
 
 @media (max-width: 767px) {

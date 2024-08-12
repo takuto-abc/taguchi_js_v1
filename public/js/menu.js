@@ -13,6 +13,14 @@ $(document).ready(function() {
         $('#nav-menu').slideToggle();  // メニューの表示/非表示をスライドで切り替える
     });
 
+
+    $(document).ready(function(){
+        $('.navbar-toggle').click(function(){
+            $('#nav-menu').toggle();  // メニューの表示・非表示を切り替え
+        });
+    });
+ 
+    
     function updateMenuDisplay() {
         if ($(window).width() < 768) {
             // 768px未満の場合はメニューボタンを表示し、ナビゲーションメニューを非表示にする
