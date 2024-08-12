@@ -134,11 +134,11 @@ const schedule = [
 app.get('/', (req, res) => {
   const loginSuccess = req.session.loginSuccess;
   req.session.loginSuccess = false; // フラグをクリア
-  res.render('index', { title: 'トップページ', loginSuccess });
+  res.render('index', { title: 'トップページ', loginSuccess, req });
 });
 
 app.get('/index', (req, res) => {
-  res.render('index', { title: 'トップページ', req });  // `req` は不要
+  res.render('index', { title: 'トップページ', loginSuccess, req });
 });
 
 app.get('/activities', (req, res) => {
