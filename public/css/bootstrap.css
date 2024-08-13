@@ -4267,8 +4267,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
-    position: right;
-    float: right;
+    position: static;
+    float: none;
     width: auto;
     margin-top: 0;
     background-color: transparent;
