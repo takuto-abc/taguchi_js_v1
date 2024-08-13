@@ -1,5 +1,8 @@
 node app.js
 git push -u origin main
+git reset --hard dc527032f00dbf8896ec6c0038577e17b047651c
+git push --force
+
 
 
 
